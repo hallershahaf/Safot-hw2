@@ -1,9 +1,9 @@
 fun atoi(word : string) =
     let 
-        fun atoihelper(number : char list) =
-            if length number = 1 then ord(hd number) - ord(#"0")
-            else ord(hd number) - ord(#"0") + 10 * atoihelper(tl number);
+        fun atoihelper(number : string, index : int) =
+            if (index = 0) then ord(String.sub(number, index)) - ord(#"0")
+            else  ord(String.sub(number, index)) - ord(#"0") + 10 * atoihelper(number, index - 1);
     in
         if size word = 0 then 0
-        else atoihelper(rev (explode word))
+        else atoihelper(word, size word - 1)
     end

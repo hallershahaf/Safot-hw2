@@ -6,5 +6,4 @@ fun is_prime(number : int) =
             else is_prime_helper(number, count + 1);
     in
         is_prime_helper(number, 2)
-    end
-    
+    end    
